@@ -6,5 +6,5 @@ import { listPage } from "./views/list.js";
 page(decorateContext);
 page('/', homePage);
 page('/list', listPage);
-
+page('/index.html', homePage)
 page.start();

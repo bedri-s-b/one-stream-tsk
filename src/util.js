@@ -3,8 +3,13 @@
 export function createSubmitHandkler(ctx, handler) {
     return function res(e) {
         e.preventDefault();
-        let movies = e.target.files[0];
-        handler(ctx, movies);
+        let data = {};
+        if (e.target.tagName == 'INPUT') {
+            data = e.target.files[0];
+        } else if (e.target.tagName == 'FORM') {
+            data = Object.fromEntries(new FormData(e.target));
+        }
+        handler(ctx, data, e);
     };
 
 

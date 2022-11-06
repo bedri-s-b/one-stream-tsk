@@ -10,7 +10,7 @@ body {
 
 html {
     font-size: 10px;
-    background-color: #9db0bb;
+    background-color: #f0f3f6;
     /* background-image: url(../assets/popcorn.jpg); */
 }
 
@@ -18,7 +18,7 @@ body {
     width: 80%;
     min-width: 800px;
     margin: 0 auto;
-    background-color: #4da9b9;
+    background-color: #5fcbae;
 }
 
 /* || typography */
@@ -124,7 +124,9 @@ nav span {
 main {
     display: block;
     text-align: center;
+    /* opacity: 0.5 */
 }
+
 
 article,
 section {
@@ -150,9 +152,9 @@ aside img {
 
 button {
     display: inline-block;
-    background-color: #208135;
+    background-color: #636dce;
     border-radius: 200px;
-    border: 4px double #d5abab;
+    border: 4px double #150f0f;
     color: #141313;
     text-align: center;
     font-size: 28px;
@@ -168,7 +170,7 @@ button {
 
 input{
 
-  background-color: #208135;
+  background-color: #205281;
   border: none;
   color: white;
   padding: 16px 32px;
@@ -192,9 +194,16 @@ form {
 }
 
 .movies > * {
-    border: solid #208135;
-    border-radius: 200px;
+    background-color: #83d7fe;
+    border: solid #0f1112;
+    border-radius: 100px;
     font-size: 2.2rem;
+}
+
+.movies > * img {
+    display: inline;
+    height: 60px;
+    padding-top: 2px;
 }
 
 #start-img{
@@ -203,9 +212,12 @@ form {
 }
 
 footer {
-    margin-top: 10px;
-    text-align: center;
+    /* margin-top: 10px;*/
+    text-align: center; 
+    position: inherit;
+    background: rgb(161, 234, 193);
 }
+
 
 
 
