@@ -14,7 +14,6 @@ export async function homePage(ctx) {
     ctx.render(mainForm(createSubmitHandkler(ctx, onSubmit)));
 }
 
-// use variable movies hire, because don't have real server where can save data.
 let movies = [];
 
 async function onSubmit(ctx, data) {

@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-   
+
 }
 
 html {
@@ -152,33 +152,33 @@ aside img {
 
 button {
     display: inline-block;
-    background-color: #636dce;
-    border-radius: 200px;
-    border: 4px double #150f0f;
-    color: #141313;
+    background-color: #979ccd;
+    border-radius: 30px;
+    /* border: 4px double #150f0f; */
+    color: #88d952;
     text-align: center;
-    font-size: 28px;
-    padding: 20px;
+    font-size: 18px;
+    padding: 10px;
     width: 200px;
-    -webkit-transition: all 0.5s;
+    /* -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
-    cursor: pointer;
+    cursor: pointer; */
     margin: 5px;
 }
 
-input{
+input {
 
-  background-color: #205281;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 200px;
-  margin: 1%;
+    background-color:  #979ccd;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 200px;
+    margin: 1%;
 
 }
 
@@ -188,36 +188,81 @@ form {
 
 .movies {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     grid-gap: 1.5em;
 }
 
-.movies > * {
+.movies>* {
     background-color: #83d7fe;
     border: solid #0f1112;
     border-radius: 100px;
     font-size: 2.2rem;
 }
 
-.movies > * img {
+.movies>* img {
     display: inline;
     height: 60px;
     padding-top: 2px;
 }
 
-#start-img{
-    width: 100%; 
+#start-img {
+    width: 100%;
     height: 100%;
 }
 
 footer {
     /* margin-top: 10px;*/
-    text-align: center; 
+    text-align: center;
     position: inherit;
     background: rgb(161, 234, 193);
 }
 
+/* list Movies */
 
+.list{
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: solid #0f1112; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.movie {
+    /* border: solid rgb(42, 148, 45);
+    box-shadow: 0 4px 8px 0 rgba(93, 25, 25, 0.2);
+    max-width: 50%; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    /* position: absolute; */
+}
+
+.movie:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+
+.movie img {
+    display: block;
+    /* width: 100px; */
+    max-width: 100%;
+    /* height: %; */
+    padding-top: 4px;
+}
+
+.list button {
+    /* display: flex; */
+    /* position: absolute; */
+    /* position: relative; */
+    bottom: 9px;
+    right: auto;
+}
 
 
