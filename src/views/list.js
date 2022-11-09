@@ -54,7 +54,6 @@ async function onSubmit(ctx, handler, e) {
             let empty = f.results.lenght;
             if (!empty) {
                 f.results.forEach(m => {
-                    console.log(m);
                     resultListMovies.push({
                         title: m.title,
                         posterPath: 'https://image.tmdb.org/t/p/w500/' + m.poster_path,
@@ -62,8 +61,6 @@ async function onSubmit(ctx, handler, e) {
                     });
                 })
             }
-            console.log("from list");
-            console.log(resultListMovies);
             ctx.page.redirect('/moveis')
         })
 

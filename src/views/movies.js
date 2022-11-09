@@ -27,7 +27,6 @@ const moviesSection = (movie) => html`
 
 
 export async function movies(ctx) {
-    console.log(resultListMovies);
     ctx.render(listTempalet(resultListMovies))
 }
 
