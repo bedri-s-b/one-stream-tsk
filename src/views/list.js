@@ -22,6 +22,9 @@ const movieTempate = (movie) => html`
         <input type="checkbox" id="other" name="interest" value="TMDB_ID" disabled />
         <label for="coding">Search into Some Other DB</label>
     
+        <input type="checkbox" id="other" name="interest" value="TMDB_ID" disabled />
+        <label for="coding">Search into Some Other DB 2</label>
+    
         <img src="assets/dove.png" alt="a simple film-spool logo">
     
     </div>
@@ -34,7 +37,8 @@ export async function listPage(ctx) {
     ctx.render(listTempalet(createSubmitHandkler(ctx, onSubmit), movies));
 }
 
-const resultListMovies = [];
+const resultListMovies = {};
+
 
 async function onSubmit(ctx, handler, e) {
     let divs = e.target.parentNode.querySelectorAll('.movies > *');
@@ -49,25 +53,34 @@ async function onSubmit(ctx, handler, e) {
 
 
     async function readFileAllMovies() {
+        resultListMovies.movies = [];
+        resultListMovies.moviesFullInfo = [];
+        resultListMovies.unFound = [];
+
         checkedMovieList.forEach(async (n) => {
             let f = await getByName(n);
-            let empty = f.results.lenght;
-            if (!empty) {
+            if (f.results.length != 0) {
                 f.results.forEach(m => {
-                    resultListMovies.push({
+                    // for send finally
+                    resultListMovies.moviesFullInfo.push(m);
+                    // for internal purpose (DTO)
+                    resultListMovies.movies.push({
                         title: m.title,
                         posterPath: 'https://image.tmdb.org/t/p/w500/' + m.poster_path,
                         overview: m.overview,
+                        popularity: m.popularity,
                     });
                 })
+            } else {
+
+                resultListMovies.unFound.push(n)
             }
-            ctx.page.redirect('/moveis')
+            ctx.page.redirect('/movies')
         })
 
     };
 
     await readFileAllMovies();
-
 }
 
 export { resultListMovies };

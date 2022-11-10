@@ -17,6 +17,11 @@ export async function homePage(ctx) {
 let movies = [];
 
 async function onSubmit(ctx, data) {
+    if (data.type !== "text/plain") {
+        alert("File must be TXT format.");
+        ctx.page.redirect('/list');
+        return;
+    }
     let mov = (await readFromFile(data))();
     movies = mov;
     ctx.page.redirect('/list');

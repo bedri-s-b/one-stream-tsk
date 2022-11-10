@@ -11,8 +11,6 @@ export function createSubmitHandkler(ctx, handler) {
         }
         handler(ctx, data, e);
     };
-
-
 }
 
 export function readFromFile(file) {
@@ -32,6 +30,25 @@ export function readFromFile(file) {
         readar.readAsText(file);
     })
 }
+
+
+export function readMore(e) {
+    let dots = e.currentTarget.parentNode.querySelector("#dots");
+    let moreText = e.currentTarget.parentNode.querySelector("#more");
+    let btnText = e.currentTarget.parentNode.querySelector("#myBtn");
+
+    if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.textContent = "Read more";
+        moreText.style.display = "none";
+    } else {
+        dots.style.display = "none";
+        btnText.textContent = "Read less";
+        moreText.style.display = "inline";
+    }
+}
+
+
 
 
 
